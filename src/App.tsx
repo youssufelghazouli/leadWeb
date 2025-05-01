@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { Bot, Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock } from 'lucide-react';
 
-// Import images to ensure Vite bundles them correctly
-import HeroBackground from '../assets/hero-background.jpg';
-import AlgorithmLeads from '../assets/algorithm-leads.jpg';
+// Import only the images that exist in src/assets/
 import AutopilotLeads from '../assets/autopilot-leads.jpg';
 import SocialMediaIntent from '../assets/social-media-intent.jpeg';
 import InstagramPostInteraction from '../assets/instagram-post-interaction.jpg';
-import B2BLocal from '../assets/b2b-local.jpg';
 import AIAssistant from '../assets/ai-assistant.jpg';
 import SmartConsent from '../assets/smartconsent.jpg';
+
+// Comment out imports for missing images
+// import HeroBackground from '../assets/hero-background.jpg';
+// import AlgorithmLeads from '../assets/algorithm-leads.jpg';
+// import B2BLocal from '../assets/b2b-local.jpg';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -124,8 +126,8 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <header className="relative min-h-screen flex items-center justify-center overflow-hidden pb-16">
+      {/* Hero Section - Comment out due to missing HeroBackground image */}
+      {/* <header className="relative min-h-screen flex items-center justify-center overflow-hidden pb-16">
         <ArrowDown className="absolute bottom-3 w-7 h-7 text-amber-500 animate-bounce" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-amber-900/20 to-black/90 z-10" />
         <div 
@@ -146,7 +148,58 @@ function App() {
             AI-powered local leads for realtors & small businesses, built with industry experts.
           </p>
 
-          {/* Free Trial Offer with FOMO */}
+          <div id="download-section" className="bg-gradient-to-r from-amber-500/30 to-yellow-600/30 p-6 rounded-xl backdrop-blur-md mb-10 border border-amber-500/20 shadow-2xl">
+            <h3 className="text-xl font-bold mb-3 text-amber-400">🚀 Elite Launch Offer</h3>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-4">
+              <div className="flex-1 text-left">
+                <h4 className="text-lg font-semibold mb-3 text-gray-100">Join Elite Realtors Now</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="text-green-500 w-5 h-5" />
+                    <span>3 Free High-Intent Lead Searches</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="text-green-500 w-5 h-5" />
+                    <span>Access to All Platforms & Features</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="text-green-500 w-5 h-5" />
+                    <span>Localized Leads in Your Area</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex-1">
+                <button 
+                  onClick={handleTryItFree}
+                  className="bg-amber-500 hover:bg-amber-600 text-black font-bold px-6 py-3 rounded-lg flex items-center gap-2 mx-auto shadow-xl hover:scale-105 transition-transform duration-300"
+                >
+                  <Download className="w-5 h-5" />
+                  Get Started Free
+                </button>
+                <p className="text-sm mt-2 text-gray-300 flex items-center justify-center gap-1">
+                  <Clock className="w-4 h-4 text-amber-400" />
+                  Limited Spots - Don’t Miss Out!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header> */}
+
+      {/* Temporary Hero Section Placeholder */}
+      <header className="relative min-h-screen flex items-center justify-center overflow-hidden pb-16 bg-gray-800">
+        <ArrowDown className="absolute bottom-3 w-7 h-7 text-amber-500 animate-bounce" />
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16 animate-fade-in">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600 drop-shadow-lg">
+            Stop Waiting, Start Finding
+          </h1>
+          <p className="text-lg md:text-xl mb-6 text-gray-200 font-medium">
+            Smartleads: Autopilot Lead Generation
+          </p>
+          <p className="text-base md:text-lg text-gray-300 mb-6">
+            AI-powered local leads for realtors & small businesses, built with industry experts.
+          </p>
+
           <div id="download-section" className="bg-gradient-to-r from-amber-500/30 to-yellow-600/30 p-6 rounded-xl backdrop-blur-md mb-10 border border-amber-500/20 shadow-2xl">
             <h3 className="text-xl font-bold mb-3 text-amber-400">🚀 Elite Launch Offer</h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-4">
@@ -193,7 +246,8 @@ function App() {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="animate-fade-in-up">
+            {/* Comment out Algorithm-Powered Local Leads due to missing image */}
+            {/* <div className="animate-fade-in-up">
               <img 
                 src={AlgorithmLeads}
                 alt="Algorithm-Powered Local Leads"
@@ -203,7 +257,7 @@ function App() {
               <p className="text-gray-300">
                 Our AI identifies high-intent leads in your area, ensuring you connect with clients ready to buy or partner.
               </p>
-            </div>
+            </div> */}
             
             <div className="animate-fade-in-up delay-100">
               <img 
@@ -323,8 +377,8 @@ function App() {
             </div>
           </div>
 
-          {/* B2B Local Business Search */}
-          <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
+          {/* Comment out B2B Local Business Search due to missing image */}
+          {/* <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
                 <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
@@ -356,7 +410,7 @@ function App() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
