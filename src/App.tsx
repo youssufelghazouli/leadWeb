@@ -197,8 +197,8 @@ function App() {
             
             <div className="animate-fade-in-up delay-100">
               <img 
-                src="https://images.unsplash.com/photo-1516321310764-8d8c946490b4?auto=format&fit=crop&w=800&q=80"
-                alt="Modern Automation Interface"
+                src="https://images.unsplash.com/photo-1551288049-4e3e4f4e6e3f?auto=format&fit=crop&w=800&q=80"
+                alt="Futuristic Automation Dashboard"
                 className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
               <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Autopilot Lead Generation</h3>
@@ -270,8 +270,8 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?auto=format&fit=crop&w=800&q=80"
-                  alt="Multiple Social Media Platforms"
+                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80"
+                  alt="Social Media Interface"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
@@ -305,7 +305,7 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1611162617210-7d673bf0f2a6?auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1591267990532-e5c2a7f24625?auto=format&fit=crop&w=800&q=80"
                   alt="Hand Interacting with Social Media Post"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
@@ -365,7 +365,7 @@ function App() {
 
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="https://images.unsplash.com/photo-1516321310764-8d8c946490b4?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
                 alt="Secure Data Interface"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
