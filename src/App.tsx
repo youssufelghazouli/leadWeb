@@ -10,24 +10,30 @@ import smartConsent from './assets/smartconsent.jpg';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
+  const [formTitle, setFormTitle] = useState('Book a Demo'); // Dynamic form title
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: ''
   });
+  const [isPolicyAgreed, setIsPolicyAgreed] = useState(false); // Checkbox state
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isPolicyAgreed) {
+      alert('You must agree to the Privacy Policy, Terms of Service, and Cookie Policy to proceed.');
+      return;
+    }
     setShowContactForm(false);
+    setFormData({ name: '', email: '', phone: '', message: '' }); // Reset form
+    setIsPolicyAgreed(false); // Reset checkbox
     alert('Thank you! Our team will contact you shortly.');
   };
 
-  const handleTryItFree = () => {
-    const downloadSection = document.querySelector('#download-section');
-    if (downloadSection) {
-      downloadSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  const openForm = (title: string) => {
+    setFormTitle(title);
+    setShowContactForm(true);
   };
 
   return (
@@ -42,7 +48,7 @@ function App() {
             >
               ✕
             </button>
-            <h3 className="text-xl font-bold mb-4 text-amber-400">Book a Demo</h3>
+            <h3 className="text-xl font-bold mb-4 text-amber-400">{formTitle}</h3>
             <form onSubmit={handleSubmit} className="space-y-3">
               <div>
                 <label className="block text-sm font-medium mb-1">Name</label>
@@ -84,6 +90,21 @@ function App() {
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 ></textarea>
               </div>
+              <div className="flex items-start gap-2">
+                <input
+                  type="checkbox"
+                  id="policy-agreement"
+                  checked={isPolicyAgreed}
+                  onChange={(e) => setIsPolicyAgreed(e.target.checked)}
+                  className="mt-1 h-4 w-4 text-amber-500 bg-gray-700 border-gray-600 rounded focus:ring-amber-500"
+                />
+                <label htmlFor="policy-agreement" className="text-sm text-gray-300">
+                  I agree to the{' '}
+                  <a href="/privacy-policy" className="text-amber-500 hover:underline">Privacy Policy</a>,{' '}
+                  <a href="/terms-of-service" className="text-amber-500 hover:underline">Terms of Service</a>, and{' '}
+                  <a href="/cookie-policy" className="text-amber-500 hover:underline">Cookie Policy</a>.
+                </label>
+              </div>
               <button
                 type="submit"
                 className="w-full bg-amber-500 text-black font-semibold py-2 rounded-md hover:bg-amber-400 transition-all duration-300"
@@ -106,13 +127,13 @@ function App() {
             <a href="#features" className="text-gray-300 hover:text-amber-500 transition-colors">Features</a>
             <a href="#benefits" className="text-gray-300 hover:text-amber-500 transition-colors">Why Smartleads</a>
             <button 
-              onClick={() => setShowContactForm(true)} 
+              onClick={() => openForm('Book a Demo')} 
               className="text-amber-500 font-semibold hover:text-amber-400 transition-colors"
             >
               Book a Demo
             </button>
             <button 
-              onClick={handleTryItFree}
+              onClick={() => openForm('Start Free Now')}
               className="bg-amber-500 text-black px-3 py-1.5 rounded-md font-semibold hover:bg-amber-400 transition-all duration-300 shadow-lg"
             >
               Start Free Now
@@ -133,7 +154,7 @@ function App() {
         />
         
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16 animate-fade-in">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600 drop-shadow-lg">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600 drop-shadow-lg">
             Stop Waiting, Start Finding
           </h1>
           <p className="text-lg md:text-xl mb-6 text-gray-200 font-medium">
@@ -166,7 +187,7 @@ function App() {
               </div>
               <div className="flex-1">
                 <button 
-                  onClick={handleTryItFree}
+                  onClick={() => openForm('Get Started Free')}
                   className="bg-amber-500 hover:bg-amber-600 text-black font-bold px-6 py-3 rounded-lg flex items-center gap-2 mx-auto shadow-xl hover:scale-105 transition-transform duration-300"
                 >
                   <Download className="w-5 h-5" />
@@ -398,14 +419,14 @@ function App() {
           </p>
           <div className="flex justify-center gap-4">
             <button 
-              onClick={() => setShowContactForm(true)}
+              onClick={() => openForm('Book a Demo')}
               className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 shadow-xl hover:scale-105 transition-transform duration-300"
             >
               Book a Demo
               <ArrowRight size={18} />
             </button>
             <button 
-              onClick={handleTryItFree}
+              onClick={() => openForm('Start Free Now')}
               className="border-2 border-amber-500 text-amber-500 hover:bg-amber-500/20 font-semibold px-6 py-3 rounded-md flex items-center gap-2 hover:scale-105 transition-transform duration-300"
             >
               <Download size={18} />
