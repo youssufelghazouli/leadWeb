@@ -300,15 +300,18 @@ function App() {
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
-                <style>
-                  h3 {
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 2; /* Number of lines to show */
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                  }
-                </style>
+                <h3
+                  style={{
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 2,
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                  }}
+                  className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm"
+                >
+                  Online and Social Media Intent Search
+                </h3>
                 <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
                   Online and Social Media Intent Search
                 </h3>
@@ -344,7 +347,7 @@ function App() {
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
-                <style>
+                <style>{`
                   h3 {
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
@@ -352,7 +355,7 @@ function App() {
                     overflow: hidden;
                     text-overflow: ellipsis;
                   }
-                </style>
+                `}</style>
                 <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
                   Ad/Post Interactions Search
                 </h3>
@@ -388,7 +391,7 @@ function App() {
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
-                <style>
+                <style>{`
                   h3 {
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
@@ -396,7 +399,7 @@ function App() {
                     overflow: hidden;
                     text-overflow: ellipsis;
                   }
-                </style>
+                `}</style>
                 <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
                   B2B Local Business Search
                 </h3>
