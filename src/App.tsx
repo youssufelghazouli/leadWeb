@@ -8,9 +8,11 @@ import socialMediaIntent from './assets/social-media-intent.jpeg';
 import instagramPostInteraction from './assets/instagram-post-interaction.jpg';
 import aiAssistant from './assets/ai-assistant.jpg';
 import smartConsent from './assets/smartconsent.jpg';
+import softwareLicense from './assets/SOFTWARE LICENSE AND PRIVACY AGREEMENT - Google Docs.pdf';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
   const [formTitle, setFormTitle] = useState('Book a Demo');
   const [formData, setFormData] = useState({
     name: '',
@@ -48,12 +50,32 @@ function App() {
       setShowContactForm(false);
       setFormData({ name: '', email: '', phone: '', message: '' });
       setIsPolicyAgreed(false);
-      alert('Thank you! Our team will contact you shortly.');
+
+      // Show download modal only for "Get Started Free" or "Start Free Now"
+      if (formTitle === 'Get Started Free' || formTitle === 'Start Free Now') {
+        setShowDownloadModal(true);
+      } else {
+        alert('Thank you! Our team will contact you shortly.');
+      }
     })
     .catch((error) => {
       console.error('Failed to send email:', error);
       alert('There was an error sending your request. Please try again later.');
     });
+  };
+
+  const handleDownload = (platform: string) => {
+    // Create a link element to trigger the download
+    const link = document.createElement('a');
+    link.href = softwareLicense;
+    link.download = 'SOFTWARE LICENSE AND PRIVACY AGREEMENT - Google Docs.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Close the download modal after initiating the download
+    setShowDownloadModal(false);
+    alert(`Thank you for downloading the Software License and Privacy Agreement for ${platform}!`);
   };
 
   const openForm = (title: string) => {
@@ -137,6 +159,40 @@ function App() {
                 Submit
               </button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Download Modal */}
+      {showDownloadModal && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-800/90 backdrop-blur-md p-6 rounded-xl max-w-md w-full relative border border-gray-700/50">
+            <button 
+              onClick={() => setShowDownloadModal(false)}
+              className="absolute top-3 right-3 text-gray-400 hover:text-white"
+            >
+              ✕
+            </button>
+            <h3 className="text-xl font-bold mb-4 text-amber-400">Download Software License</h3>
+            <p className="text-gray-300 mb-6">
+              Thank you for your submission! Please select your platform to download the Software License and Privacy Agreement.
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={() => handleDownload('macOS')}
+                className="bg-amber-500 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 hover:bg-amber-400 transition-all duration-300"
+              >
+                <Download className="w-5 h-5" />
+                macOS
+              </button>
+              <button
+                onClick={() => handleDownload('Windows')}
+                className="bg-amber-500 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 hover:bg-amber-400 transition-all duration-300"
+              >
+                <Download className="w-5 h-5" />
+                Windows
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -252,7 +308,7 @@ function App() {
               <img 
                 src={autopilotLeads}
                 alt="Autopilot Lead Generation"
-                className="rounded-lg shadow-xl spécialement mb-6 w-full h-48 object-cover border border-gray-700/50"
+                className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
               <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Autopilot Lead Generation</h3>
               <p className="text-gray-300">
@@ -300,18 +356,15 @@ function App() {
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
-                <h3
-                  style={{
-                    display: '-webkit-box',
-                    WebkitBoxOrient: 'vertical',
-                    WebkitLineClamp: 2,
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                  }}
-                  className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm"
-                >
-                  Online and Social Media Intent Search
-                </h3>
+                <style>{`
+                  h3 {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2; /* Number of lines to show */
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                `}</style>
                 <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
                   Online and Social Media Intent Search
                 </h3>
