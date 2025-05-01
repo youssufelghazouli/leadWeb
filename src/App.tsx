@@ -114,7 +114,7 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section with Luxurious Social Media Interaction Image */}
+      {/* Hero Section */}
       <header className="relative min-h-screen flex items-center justify-center overflow-hidden pb-16">
         <ArrowDown className="absolute bottom-3 w-7 h-7 text-amber-500 animate-bounce" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-amber-900/20 to-black/90 z-10" />
@@ -197,8 +197,8 @@ function App() {
             
             <div className="animate-fade-in-up delay-100">
               <img 
-                src="https://images.unsplash.com/photo-1666875751025-02ee7096830b?auto=format&fit=crop&w=800&q=80"
-                alt="Luxurious Automation Interface"
+                src="https://images.unsplash.com/photo-1516321310764-8d8c946490b4?auto=format&fit=crop&w=800&q=80"
+                alt="Modern Automation Interface"
                 className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
               <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Autopilot Lead Generation</h3>
@@ -243,20 +243,20 @@ function App() {
             Built for Realtors & Small Businesses
           </h2>
 
-          {/* Social Media Intent Search */}
+          {/* Online and Social Media Intent Search */}
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
                 <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
-                  Social Media Intent Search
+                  Online and Social Media Intent Search
                 </h3>
                 <p className="text-gray-300 mb-4">
-                  Find leads across social media by tracking keywords that signal buyer intent. Get emails, phone numbers, and names where available.
+                  Find leads across online platforms by tracking keywords that signal buyer intent. Get emails, phone numbers, and names where available.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <Globe className="text-amber-500 w-5 h-5" />
-                    <span>Scans Facebook, Instagram, Reddit, and more</span>
+                    <span>Scans LinkedIn, Facebook, Reddit, and more</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Target className="text-amber-500 w-5 h-5" />
@@ -270,8 +270,8 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80"
-                  alt="Premium Social Media Analytics Dashboard"
+                  src="https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?auto=format&fit=crop&w=800&q=80"
+                  alt="Multiple Social Media Platforms"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
@@ -305,8 +305,8 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80"
-                  alt="Sleek Social Media Engagement Metrics"
+                  src="https://images.unsplash.com/photo-1611162617210-7d673bf0f2a6?auto=format&fit=crop&w=800&q=80"
+                  alt="Hand Interacting with Social Media Post"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
@@ -351,8 +351,8 @@ function App() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="https://images.unsplash.com/photo-1677442136019-162d7d4e20fe?auto=format&fit=crop&w=800&q=80"
-                alt="Futuristic AI Interface"
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80"
+                alt="AI-Powered Interface"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
               <div className="p-5">
@@ -365,8 +365,8 @@ function App() {
 
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="https://images.unsplash.com/photo-1653665918398-2c2784b57d92?auto=format&fit=crop&w=800&q=80"
-                alt="Secure Communication Interface"
+                src="https://images.unsplash.com/photo-1516321310764-8d8c946490b4?auto=format&fit=crop&w=800&q=80"
+                alt="Secure Data Interface"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
               <div className="p-5">
@@ -431,7 +431,7 @@ function App() {
             <div>
               <h4 className="text-white font-semibold mb-3">Platform</h4>
               <ul className="space-y-1 text-sm">
-                <li>Social Media Intent Search</li>
+                <li>Online and Social Media Intent Search</li>
                 <li>Ad/Post Interactions</li>
                 <li>B2B Local Search</li>
                 <li>Copilot & Consent Features</li>
