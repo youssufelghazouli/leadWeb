@@ -1,18 +1,6 @@
 import React, { useState } from 'react';
 import { Bot, Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock } from 'lucide-react';
 
-// Import only the images that exist in src/assets/
-import AutopilotLeads from '../assets/autopilot-leads.jpg';
-import SocialMediaIntent from '../assets/social-media-intent.jpeg';
-import InstagramPostInteraction from '../assets/instagram-post-interaction.jpg';
-import AIAssistant from '../assets/ai-assistant.jpg';
-import SmartConsent from '../assets/smartconsent.jpg';
-
-// Comment out imports for missing images
-// import HeroBackground from '../assets/hero-background.jpg';
-// import AlgorithmLeads from '../assets/algorithm-leads.jpg';
-// import B2BLocal from '../assets/b2b-local.jpg';
-
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -126,14 +114,14 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section - Comment out due to missing HeroBackground image */}
-      {/* <header className="relative min-h-screen flex items-center justify-center overflow-hidden pb-16">
+      {/* Hero Section */}
+      <header className="relative min-h-screen flex items-center justify-center overflow-hidden pb-16">
         <ArrowDown className="absolute bottom-3 w-7 h-7 text-amber-500 animate-bounce" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-amber-900/20 to-black/90 z-10" />
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{ 
-            backgroundImage: `url(${HeroBackground})`
+            backgroundImage: "url('https://images.unsplash.com/photo-1628260410227-8a5bf0b4e2be?auto=format&fit=crop&w=1920&q=80')"
           }}
         />
         
@@ -148,58 +136,7 @@ function App() {
             AI-powered local leads for realtors & small businesses, built with industry experts.
           </p>
 
-          <div id="download-section" className="bg-gradient-to-r from-amber-500/30 to-yellow-600/30 p-6 rounded-xl backdrop-blur-md mb-10 border border-amber-500/20 shadow-2xl">
-            <h3 className="text-xl font-bold mb-3 text-amber-400">🚀 Elite Launch Offer</h3>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-4">
-              <div className="flex-1 text-left">
-                <h4 className="text-lg font-semibold mb-3 text-gray-100">Join Elite Realtors Now</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="text-green-500 w-5 h-5" />
-                    <span>3 Free High-Intent Lead Searches</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="text-green-500 w-5 h-5" />
-                    <span>Access to All Platforms & Features</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="text-green-500 w-5 h-5" />
-                    <span>Localized Leads in Your Area</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="flex-1">
-                <button 
-                  onClick={handleTryItFree}
-                  className="bg-amber-500 hover:bg-amber-600 text-black font-bold px-6 py-3 rounded-lg flex items-center gap-2 mx-auto shadow-xl hover:scale-105 transition-transform duration-300"
-                >
-                  <Download className="w-5 h-5" />
-                  Get Started Free
-                </button>
-                <p className="text-sm mt-2 text-gray-300 flex items-center justify-center gap-1">
-                  <Clock className="w-4 h-4 text-amber-400" />
-                  Limited Spots - Don’t Miss Out!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header> */}
-
-      {/* Temporary Hero Section Placeholder */}
-      <header className="relative min-h-screen flex items-center justify-center overflow-hidden pb-16 bg-gray-800">
-        <ArrowDown className="absolute bottom-3 w-7 h-7 text-amber-500 animate-bounce" />
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16 animate-fade-in">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600 drop-shadow-lg">
-            Stop Waiting, Start Finding
-          </h1>
-          <p className="text-lg md:text-xl mb-6 text-gray-200 font-medium">
-            Smartleads: Autopilot Lead Generation
-          </p>
-          <p className="text-base md:text-lg text-gray-300 mb-6">
-            AI-powered local leads for realtors & small businesses, built with industry experts.
-          </p>
-
+          {/* Free Trial Offer with FOMO */}
           <div id="download-section" className="bg-gradient-to-r from-amber-500/30 to-yellow-600/30 p-6 rounded-xl backdrop-blur-md mb-10 border border-amber-500/20 shadow-2xl">
             <h3 className="text-xl font-bold mb-3 text-amber-400">🚀 Elite Launch Offer</h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-4">
@@ -246,23 +183,22 @@ function App() {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Comment out Algorithm-Powered Local Leads due to missing image */}
-            {/* <div className="animate-fade-in-up">
+            <div className="animate-fade-in-up">
               <img 
-                src={AlgorithmLeads}
-                alt="Algorithm-Powered Local Leads"
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                alt="Advanced Analytics Dashboard"
                 className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
               <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Algorithm-Powered Local Leads</h3>
               <p className="text-gray-300">
                 Our AI identifies high-intent leads in your area, ensuring you connect with clients ready to buy or partner.
               </p>
-            </div> */}
+            </div>
             
             <div className="animate-fade-in-up delay-100">
               <img 
-                src={AutopilotLeads}
-                alt="Autopilot Lead Generation"
+                src="https://images.unsplash.com/photo-1516321310764-8d8c946490b4?auto=format&fit=crop&w=800&q=80"
+                alt="Modern Automation Interface"
                 className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
               <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Autopilot Lead Generation</h3>
@@ -334,8 +270,8 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src={SocialMediaIntent}
-                  alt="Online and Social Media Intent Search"
+                  src="https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?auto=format&fit=crop&w=800&q=80"
+                  alt="Multiple Social Media Platforms"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
@@ -369,16 +305,16 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src={InstagramPostInteraction}
-                  alt="Ad/Post Interactions Search"
+                  src="https://images.unsplash.com/photo-1611162617210-7d673bf0f2a6?auto=format&fit=crop&w=800&q=80"
+                  alt="Hand Interacting with Social Media Post"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
             </div>
           </div>
 
-          {/* Comment out B2B Local Business Search due to missing image */}
-          {/* <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
+          {/* B2B Local Business Search */}
+          <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
                 <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
@@ -404,19 +340,19 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src={B2BLocal}
-                  alt="B2B Local Business Search"
+                  src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
+                  alt="Luxury Business Networking Event"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
             </div>
-          </div> */}
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src={AIAssistant}
-                alt="AI Copilot Assistance"
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80"
+                alt="AI-Powered Interface"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
               <div className="p-5">
@@ -429,8 +365,8 @@ function App() {
 
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src={SmartConsent}
-                alt="Smart Consent Feature"
+                src="https://images.unsplash.com/photo-1516321310764-8d8c946490b4?auto=format&fit=crop&w=800&q=80"
+                alt="Secure Data Interface"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
               <div className="p-5">
@@ -524,11 +460,6 @@ function App() {
           
           <div className="border-t border-gray-800 mt-8 pt-6 text-center">
             <p className="text-sm">© 2025 Smartleads by SalesFinderAI. All rights reserved.</p>
-            <p className="text-sm mt-2">
-              Image Credits: 
-              <span className="mx-1">Autopilot Lead Generation image designed by <a href="http://www.freepik.com" className="text-amber-500 hover:underline">stories / Freepik</a></span> | 
-              <span className="mx-1">Smart Consent Feature image by macrovector</span>
-            </p>
           </div>
         </div>
       </section>
