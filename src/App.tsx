@@ -121,7 +121,7 @@ function App() {
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1628260410227-8a5bf0b4e2be?auto=format&fit=crop&w=1920&q=80')"
+            backgroundImage: "url('/assets/hero-background.jpg')"
           }}
         />
         
@@ -185,8 +185,8 @@ function App() {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="animate-fade-in-up">
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
-                alt="Advanced Analytics Dashboard"
+                src="/assets/algorithm-leads.jpg"
+                alt="Algorithm-Powered Local Leads"
                 className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
               <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Algorithm-Powered Local Leads</h3>
@@ -197,8 +197,8 @@ function App() {
             
             <div className="animate-fade-in-up delay-100">
               <img 
-                src="https://images.unsplash.com/photo-1516321310764-8d8c946490b4?auto=format&fit=crop&w=800&q=80"
-                alt="Modern Automation Interface"
+                src="/assets/autopilot-leads.jpg"
+                alt="Autopilot Lead Generation"
                 className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
               <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Autopilot Lead Generation</h3>
@@ -270,8 +270,8 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?auto=format&fit=crop&w=800&q=80"
-                  alt="Multiple Social Media Platforms"
+                  src="/assets/social-media-intent.jpeg"
+                  alt="Online and Social Media Intent Search"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
@@ -305,8 +305,8 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1611162617210-7d673bf0f2a6?auto=format&fit=crop&w=800&q=80"
-                  alt="Hand Interacting with Social Media Post"
+                  src="/assets/instagram-post-interaction.jpg"
+                  alt="Ad/Post Interactions Search"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
@@ -340,8 +340,8 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
-                  alt="Luxury Business Networking Event"
+                  src="/assets/b2b-local.jpg"
+                  alt="B2B Local Business Search"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
@@ -351,8 +351,8 @@ function App() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80"
-                alt="AI-Powered Interface"
+                src="/assets/ai-assistant.jpg"
+                alt="AI Copilot Assistance"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
               <div className="p-5">
@@ -365,8 +365,8 @@ function App() {
 
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="https://images.unsplash.com/photo-1516321310764-8d8c946490b4?auto=format&fit=crop&w=800&q=80"
-                alt="Secure Data Interface"
+                src="/assets/smartconsent.jpg"
+                alt="Smart Consent Feature"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
               <div className="p-5">
@@ -460,6 +460,11 @@ function App() {
           
           <div className="border-t border-gray-800 mt-8 pt-6 text-center">
             <p className="text-sm">© 2025 Smartleads by SalesFinderAI. All rights reserved.</p>
+            <p className="text-sm mt-2">
+              Image Credits: 
+              <span className="mx-1">Autopilot Lead Generation image designed by <a href="http://www.freepik.com" className="text-amber-500 hover:underline">stories / Freepik</a></span> | 
+              <span className="mx-1">Smart Consent Feature image by macrovector</span>
+            </p>
           </div>
         </div>
       </section>
