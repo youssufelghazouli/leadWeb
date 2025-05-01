@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Bot, Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 // Import local images
 import autopilotLeads from './assets/autopilot-leads.jpg';
@@ -10,14 +11,14 @@ import smartConsent from './assets/smartconsent.jpg';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
-  const [formTitle, setFormTitle] = useState('Book a Demo'); // Dynamic form title
+  const [formTitle, setFormTitle] = useState('Book a Demo');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: ''
   });
-  const [isPolicyAgreed, setIsPolicyAgreed] = useState(false); // Checkbox state
+  const [isPolicyAgreed, setIsPolicyAgreed] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,10 +26,34 @@ function App() {
       alert('You must agree to the Privacy Policy, Terms of Service, and Cookie Policy to proceed.');
       return;
     }
-    setShowContactForm(false);
-    setFormData({ name: '', email: '', phone: '', message: '' }); // Reset form
-    setIsPolicyAgreed(false); // Reset checkbox
-    alert('Thank you! Our team will contact you shortly.');
+
+    // Prepare the email data
+    const emailData = {
+      form_title: formTitle,
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+    };
+
+    // Send email using EmailJS
+    emailjs.send(
+      'service_d76x92s', // Service ID
+      'template_r75oava', // Template ID for "Contact Us"
+      emailData,
+      'WCwpfDLkO-ZPQ6rd8' // User ID (Public API Key)
+    )
+    .then((response) => {
+      console.log('Email sent successfully:', response.status, response.text);
+      setShowContactForm(false);
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setIsPolicyAgreed(false);
+      alert('Thank you! Our team will contact you shortly.');
+    })
+    .catch((error) => {
+      console.error('Failed to send email:', error);
+      alert('There was an error sending your request. Please try again later.');
+    });
   };
 
   const openForm = (title: string) => {
@@ -227,7 +252,7 @@ function App() {
               <img 
                 src={autopilotLeads}
                 alt="Autopilot Lead Generation"
-                className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
+                className="rounded-lg shadow-xl spécialement mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
               <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Autopilot Lead Generation</h3>
               <p className="text-gray-300">
@@ -275,6 +300,15 @@ function App() {
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
+                <style>
+                  h3 {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2; /* Number of lines to show */
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                </style>
                 <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
                   Online and Social Media Intent Search
                 </h3>
@@ -310,6 +344,15 @@ function App() {
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
+                <style>
+                  h3 {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2; /* Number of lines to show */
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                </style>
                 <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
                   Ad/Post Interactions Search
                 </h3>
@@ -345,6 +388,15 @@ function App() {
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
+                <style>
+                  h3 {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2; /* Number of lines to show */
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                </style>
                 <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
                   B2B Local Business Search
                 </h3>
