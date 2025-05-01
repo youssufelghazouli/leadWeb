@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bot, Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare } from 'lucide-react';
+import { Bot, Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock } from 'lucide-react';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -28,21 +28,21 @@ function App() {
       {/* Contact Form Modal */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-800 p-6 rounded-xl max-w-md w-full relative">
+          <div className="bg-gray-800/90 backdrop-blur-md p-6 rounded-xl max-w-md w-full relative border border-gray-700/50">
             <button 
               onClick={() => setShowContactForm(false)}
               className="absolute top-3 right-3 text-gray-400 hover:text-white"
             >
               ✕
             </button>
-            <h3 className="text-xl font-bold mb-4">Book a Demo</h3>
+            <h3 className="text-xl font-bold mb-4 text-amber-400">Book a Demo</h3>
             <form onSubmit={handleSubmit} className="space-y-3">
               <div>
                 <label className="block text-sm font-medium mb-1">Name</label>
                 <input
                   type="text"
                   required
-                  className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                  className="w-full p-2 rounded-md bg-gray-700/50 border border-gray-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                 />
@@ -52,7 +52,7 @@ function App() {
                 <input
                   type="email"
                   required
-                  className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                  className="w-full p-2 rounded-md bg-gray-700/50 border border-gray-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                 />
@@ -62,7 +62,7 @@ function App() {
                 <input
                   type="tel"
                   required
-                  className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                  className="w-full p-2 rounded-md bg-gray-700/50 border border-gray-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
                 />
@@ -72,14 +72,14 @@ function App() {
                 <textarea
                   required
                   rows={3}
-                  className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                  className="w-full p-2 rounded-md bg-gray-700/50 border border-gray-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-amber-500 text-black font-semibold py-2 rounded-md hover:bg-amber-400"
+                className="w-full bg-amber-500 text-black font-semibold py-2 rounded-md hover:bg-amber-400 transition-all duration-300"
               >
                 Submit
               </button>
@@ -89,24 +89,24 @@ function App() {
       )}
 
       {/* Header Navigation */}
-      <nav className="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm">
+      <nav className="fixed w-full z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-700/50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Bot className="w-7 h-7 text-amber-500" />
-            <span className="text-lg font-bold">Smartleads</span>
+            <span className="text-lg font-bold text-white drop-shadow-md">Smartleads</span>
           </div>
           <div className="flex items-center gap-5">
-            <a href="#features" className="text-gray-300 hover:text-amber-500">Features</a>
-            <a href="#benefits" className="text-gray-300 hover:text-amber-500">Why Smartleads</a>
+            <a href="#features" className="text-gray-300 hover:text-amber-500 transition-colors">Features</a>
+            <a href="#benefits" className="text-gray-300 hover:text-amber-500 transition-colors">Why Smartleads</a>
             <button 
               onClick={() => setShowContactForm(true)} 
-              className="text-amber-500 font-semibold hover:text-amber-400"
+              className="text-amber-500 font-semibold hover:text-amber-400 transition-colors"
             >
               Book a Demo
             </button>
             <button 
               onClick={handleTryItFree}
-              className="bg-amber-500 text-black px-3 py-1.5 rounded-md font-semibold hover:bg-amber-400"
+              className="bg-amber-500 text-black px-3 py-1.5 rounded-md font-semibold hover:bg-amber-400 transition-all duration-300 shadow-lg"
             >
               Start Free Now
             </button>
@@ -114,34 +114,34 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section with Social Media Interaction Image */}
+      {/* Hero Section with Luxurious Social Media Interaction Image */}
       <header className="relative min-h-screen flex items-center justify-center overflow-hidden pb-16">
         <ArrowDown className="absolute bottom-3 w-7 h-7 text-amber-500 animate-bounce" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-amber-900/20 to-black/90 z-10" />
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1611162617210-7d673bf0f2a6?auto=format&fit=crop&w=1920&q=80')"
+            backgroundImage: "url('https://images.unsplash.com/photo-1628260410227-8a5bf0b4e2be?auto=format&fit=crop&w=1920&q=80')"
           }}
         />
         
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-amber-600">
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16 animate-fade-in">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600 drop-shadow-lg">
             Stop Waiting, Start Finding
           </h1>
-          <p className="text-lg md:text-xl mb-6 text-gray-300">
+          <p className="text-lg md:text-xl mb-6 text-gray-200 font-medium">
             Smartleads: Autopilot Lead Generation
           </p>
-          <p className="text-base md:text-lg text-gray-400 mb-6">
+          <p className="text-base md:text-lg text-gray-300 mb-6">
             AI-powered local leads for realtors & small businesses, built with industry experts.
           </p>
 
-          {/* Free Trial Offer */}
-          <div id="download-section" className="bg-gradient-to-r from-amber-500/20 to-yellow-500/20 p-6 rounded-xl backdrop-blur-sm mb-10">
-            <h3 className="text-xl font-bold mb-3">🚀 Exclusive Launch Offer</h3>
+          {/* Free Trial Offer with FOMO */}
+          <div id="download-section" className="bg-gradient-to-r from-amber-500/30 to-yellow-600/30 p-6 rounded-xl backdrop-blur-md mb-10 border border-amber-500/20 shadow-2xl">
+            <h3 className="text-xl font-bold mb-3 text-amber-400">🚀 Elite Launch Offer</h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-4">
               <div className="flex-1 text-left">
-                <h4 className="text-lg font-semibold mb-3">Start Free Today</h4>
+                <h4 className="text-lg font-semibold mb-3 text-gray-100">Join Elite Realtors Now</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="text-green-500 w-5 h-5" />
@@ -160,12 +160,15 @@ function App() {
               <div className="flex-1">
                 <button 
                   onClick={handleTryItFree}
-                  className="bg-amber-500 hover:bg-amber-600 text-black font-bold px-6 py-3 rounded-lg flex items-center gap-2 mx-auto shadow-lg"
+                  className="bg-amber-500 hover:bg-amber-600 text-black font-bold px-6 py-3 rounded-lg flex items-center gap-2 mx-auto shadow-xl hover:scale-105 transition-transform duration-300"
                 >
                   <Download className="w-5 h-5" />
                   Get Started Free
                 </button>
-                <p className="text-sm mt-2 text-gray-400">Limited spots - Join the future of sales!</p>
+                <p className="text-sm mt-2 text-gray-300 flex items-center justify-center gap-1">
+                  <Clock className="w-4 h-4 text-amber-400" />
+                  Limited Spots - Don’t Miss Out!
+                </p>
               </div>
             </div>
           </div>
@@ -173,32 +176,32 @@ function App() {
       </header>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-gray-800" id="benefits">
+      <section className="py-16 bg-gradient-to-b from-gray-800 to-gray-900" id="benefits">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-white drop-shadow-md">
             Why Smartleads Changes Everything
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div>
+            <div className="animate-fade-in-up">
               <img 
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
-                alt="Algorithm-Powered Leads"
-                className="rounded-lg shadow-md mb-6 w-full h-48 object-cover"
+                alt="Advanced Analytics Dashboard"
+                className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
-              <h3 className="text-xl font-bold mb-3 text-amber-500">Algorithm-Powered Local Leads</h3>
+              <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Algorithm-Powered Local Leads</h3>
               <p className="text-gray-300">
                 Our AI identifies high-intent leads in your area, ensuring you connect with clients ready to buy or partner.
               </p>
             </div>
             
-            <div>
+            <div className="animate-fade-in-up delay-100">
               <img 
-                src="https://images.unsplash.com/photo-1516321310764-8d8c946490b4?auto=format&fit=crop&w=800&q=80"
-                alt="Autopilot Automation"
-                className="rounded-lg shadow-md mb-6 w-full h-48 object-cover"
+                src="https://images.unsplash.com/photo-1666875751025-02ee7096830b?auto=format&fit=crop&w=800&q=80"
+                alt="Luxurious Automation Interface"
+                className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
-              <h3 className="text-xl font-bold mb-3 text-amber-500">Autopilot Lead Generation</h3>
+              <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Autopilot Lead Generation</h3>
               <p className="text-gray-300">
                 No more ad spend or cold calls. Smartleads delivers hot leads automatically, freeing you to close deals.
               </p>
@@ -206,27 +209,27 @@ function App() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-gray-900 p-5 rounded-lg">
+            <div className="bg-gray-800/90 backdrop-blur-md p-5 rounded-lg border border-gray-700/50 animate-fade-in-up delay-200">
               <Shield className="w-10 h-10 text-amber-500 mb-3" />
-              <h3 className="text-lg font-semibold mb-2">Legal Consent Compliance</h3>
+              <h3 className="text-lg font-semibold mb-2 text-amber-400">Legal Consent Compliance</h3>
               <p className="text-gray-400 text-sm">
                 Contact leads legally with our automated consent system, ensuring compliance and trust.
               </p>
             </div>
             
-            <div className="bg-gray-900 p-5 rounded-lg">
+            <div className="bg-gray-800/90 backdrop-blur-md p-5 rounded-lg border border-gray-700/50 animate-fade-in-up delay-300">
               <Brain className="w-10 h-10 text-amber-500 mb-3" />
-              <h3 className="text-lg font-semibold mb-2">Expert-Built Solution</h3>
+              <h3 className="text-lg font-semibold mb-2 text-amber-400">Expert-Built Solution</h3>
               <p className="text-gray-400 text-sm">
                 Designed with real estate and small business experts to solve today’s lead challenges.
               </p>
             </div>
             
-            <div className="bg-gray-900 p-5 rounded-lg">
+            <div className="bg-gray-800/90 backdrop-blur-md p-5 rounded-lg border border-gray-700/50 animate-fade-in-up delay-400">
               <Users className="w-10 h-10 text-amber-500 mb-3" />
-              <h3 className="text-lg font-semibold mb-2">Happy Clients</h3>
+              <h3 className="text-lg font-semibold mb-2 text-amber-400">Elite Success Stories</h3>
               <p className="text-gray-400 text-sm">
-                Join realtors and businesses thriving with Smartleads’ high-intent, untouched leads.
+                Top realtors and businesses thrive with Smartleads’ high-intent, untouched leads.
               </p>
             </div>
           </div>
@@ -236,15 +239,15 @@ function App() {
       {/* Features Section */}
       <section className="py-16 bg-gray-900" id="features">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-white drop-shadow-md">
             Built for Realtors & Small Businesses
           </h2>
 
           {/* Social Media Intent Search */}
-          <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-6 mb-10">
+          <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-3 text-amber-500">
+                <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
                   Social Media Intent Search
                 </h3>
                 <p className="text-gray-300 mb-4">
@@ -267,19 +270,19 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80"
-                  alt="Social Media Analytics"
-                  className="rounded-lg shadow-md w-full h-64 object-cover"
+                  src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80"
+                  alt="Premium Social Media Analytics Dashboard"
+                  className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
             </div>
           </div>
 
           {/* Ad/Post Interactions Search */}
-          <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-6 mb-10">
+          <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-3 text-amber-500">
+                <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
                   Ad/Post Interactions Search
                 </h3>
                 <p className="text-gray-300 mb-4">
@@ -302,19 +305,19 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80"
-                  alt="Social Media Engagement"
-                  className="rounded-lg shadow-md w-full h-64 object-cover"
+                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80"
+                  alt="Sleek Social Media Engagement Metrics"
+                  className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
             </div>
           </div>
 
           {/* B2B Local Business Search */}
-          <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-6 mb-10">
+          <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-3 text-amber-500">
+                <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">
                   B2B Local Business Search
                 </h3>
                 <p className="text-gray-300 mb-4">
@@ -337,37 +340,37 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?auto=format&fit=crop&w=800&q=80"
-                  alt="Local Business Networking"
-                  className="rounded-lg shadow-md w-full h-64 object-cover"
+                  src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
+                  alt="Luxury Business Networking Event"
+                  className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80"
-                alt="AI Copilot Interface"
-                className="w-full h-40 object-cover"
+                src="https://images.unsplash.com/photo-1677442136019-162d7d4e20fe?auto=format&fit=crop&w=800&q=80"
+                alt="Futuristic AI Interface"
+                className="w-full h-40 object-cover border-b border-gray-700/50"
               />
               <div className="p-5">
-                <h3 className="text-lg font-bold mb-2">AI Copilot Assistance</h3>
+                <h3 className="text-lg font-bold mb-2 text-amber-400">AI Copilot Assistance</h3>
                 <p className="text-gray-400 text-sm">
                   Optimize searches with our AI Copilot, guiding you to the best keywords and strategies.
                 </p>
               </div>
             </div>
 
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="https://images.unsplash.com/photo-1516321310764-8d8c946490b4?auto=format&fit=crop&w=800&q=80"
-                alt="Secure Consent System"
-                className="w-full h-40 object-cover"
+                src="https://images.unsplash.com/photo-1653665918398-2c2784b57d92?auto=format&fit=crop&w=800&q=80"
+                alt="Secure Communication Interface"
+                className="w-full h-40 object-cover border-b border-gray-700/50"
               />
               <div className="p-5">
-                <h3 className="text-lg font-bold mb-2">Smart Consent Feature</h3>
+                <h3 className="text-lg font-bold mb-2 text-amber-400">Smart Consent Feature</h3>
                 <p className="text-gray-400 text-sm">
                   Legally contact leads with automated consent tracking and manual outreach options.
                 </p>
@@ -380,23 +383,23 @@ function App() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-gray-900 to-black">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white drop-shadow-md">
             Transform Sales with Smartleads
           </h2>
-          <p className="text-lg text-gray-400 mb-6">
-            Find high-intent, untouched leads in your area. Built for realtors and small businesses.
+          <p className="text-lg text-gray-300 mb-6">
+            Join elite realtors and businesses finding high-intent, untouched leads in their area.
           </p>
           <div className="flex justify-center gap-4">
             <button 
               onClick={() => setShowContactForm(true)}
-              className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 shadow-lg"
+              className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 shadow-xl hover:scale-105 transition-transform duration-300"
             >
               Book a Demo
               <ArrowRight size={18} />
             </button>
             <button 
               onClick={handleTryItFree}
-              className="border-2 border-amber-500 text-amber-500 hover:bg-amber-500/10 font-semibold px-6 py-3 rounded-md flex items-center gap-2"
+              className="border-2 border-amber-500 text-amber-500 hover:bg-amber-500/20 font-semibold px-6 py-3 rounded-md flex items-center gap-2 hover:scale-105 transition-transform duration-300"
             >
               <Download size={18} />
               Start Free Now
@@ -406,12 +409,12 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-gray-400 py-10">
+      <section className="bg-black text-gray-400 py-10">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-6">
             <div>
               <Bot className="w-8 h-8 text-amber-500 mb-3" />
-              <h3 className="text-white font-semibold mb-2">Smartleads</h3>
+              <h3 className="text-white font-semibold mb-2 text-amber-400">Smartleads</h3>
               <p className="text-sm">
                 The future of sales. High-intent, local leads for realtors and small businesses.
               </p>
@@ -459,7 +462,7 @@ function App() {
             <p className="text-sm">© 2025 Smartleads by SalesFinderAI. All rights reserved.</p>
           </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 }
