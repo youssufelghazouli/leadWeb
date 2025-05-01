@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Bot, Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock } from 'lucide-react';
 
+// Import local images
+import autopilotLeads from './assets/autopilot-leads.jpg';
+import socialMediaIntent from './assets/social-media-intent.jpeg';
+import instagramPostInteraction from './assets/instagram-post-interaction.jpg';
+import aiAssistant from './assets/ai-assistant.jpg';
+import smartConsent from './assets/smartconsent.jpg';
+
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -197,8 +204,8 @@ function App() {
             
             <div className="animate-fade-in-up delay-100">
               <img 
-                src="https://images.unsplash.com/photo-1551288049-4e3e4f4e6e3f?auto=format&fit=crop&w=800&q=80"
-                alt="Futuristic Automation Dashboard"
+                src={autopilotLeads}
+                alt="Autopilot Lead Generation"
                 className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
               <h3 className="text-xl font-bold mb-3 text-amber-400 drop-shadow-sm">Autopilot Lead Generation</h3>
@@ -270,8 +277,8 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80"
-                  alt="Social Media Interface"
+                  src={socialMediaIntent}
+                  alt="Social Media Intent Search"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
@@ -305,8 +312,8 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="https://images.unsplash.com/photo-1591267990532-e5c2a7f24625?auto=format&fit=crop&w=800&q=80"
-                  alt="Hand Interacting with Social Media Post"
+                  src={instagramPostInteraction}
+                  alt="Ad/Post Interactions Search"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
               </div>
@@ -351,8 +358,8 @@ function App() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80"
-                alt="AI-Powered Interface"
+                src={aiAssistant}
+                alt="AI Copilot Assistance"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
               <div className="p-5">
@@ -365,8 +372,8 @@ function App() {
 
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
-                alt="Secure Data Interface"
+                src={smartConsent}
+                alt="Smart Consent Feature"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
               <div className="p-5">
