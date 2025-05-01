@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { Bot, Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock } from 'lucide-react';
 
+// Import images to ensure Vite bundles them correctly
+import HeroBackground from '../assets/hero-background.jpg';
+import AlgorithmLeads from '../assets/algorithm-leads.jpg';
+import AutopilotLeads from '../assets/autopilot-leads.jpg';
+import SocialMediaIntent from '../assets/social-media-intent.jpeg';
+import InstagramPostInteraction from '../assets/instagram-post-interaction.jpg';
+import B2BLocal from '../assets/b2b-local.jpg';
+import AIAssistant from '../assets/ai-assistant.jpg';
+import SmartConsent from '../assets/smartconsent.jpg';
+
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -121,7 +131,7 @@ function App() {
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{ 
-            backgroundImage: "url('/assets/hero-background.jpg')"
+            backgroundImage: `url(${HeroBackground})`
           }}
         />
         
@@ -185,7 +195,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="animate-fade-in-up">
               <img 
-                src="/assets/algorithm-leads.jpg"
+                src={AlgorithmLeads}
                 alt="Algorithm-Powered Local Leads"
                 className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
@@ -197,7 +207,7 @@ function App() {
             
             <div className="animate-fade-in-up delay-100">
               <img 
-                src="/assets/autopilot-leads.jpg"
+                src={AutopilotLeads}
                 alt="Autopilot Lead Generation"
                 className="rounded-lg shadow-xl mb-6 w-full h-48 object-cover border border-gray-700/50"
               />
@@ -270,7 +280,7 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="/assets/social-media-intent.jpeg"
+                  src={SocialMediaIntent}
                   alt="Online and Social Media Intent Search"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
@@ -305,7 +315,7 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="/assets/instagram-post-interaction.jpg"
+                  src={InstagramPostInteraction}
                   alt="Ad/Post Interactions Search"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
@@ -340,7 +350,7 @@ function App() {
               </div>
               <div className="flex-1">
                 <img 
-                  src="/assets/b2b-local.jpg"
+                  src={B2BLocal}
                   alt="B2B Local Business Search"
                   className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
                 />
@@ -351,7 +361,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="/assets/ai-assistant.jpg"
+                src={AIAssistant}
                 alt="AI Copilot Assistance"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
@@ -365,7 +375,7 @@ function App() {
 
             <div className="bg-gray-800/90 rounded-lg overflow-hidden backdrop-blur-md border border-gray-700/50">
               <img 
-                src="/assets/smartconsent.jpg"
+                src={SmartConsent}
                 alt="Smart Consent Feature"
                 className="w-full h-40 object-cover border-b border-gray-700/50"
               />
