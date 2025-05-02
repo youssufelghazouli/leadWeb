@@ -12,7 +12,7 @@ import softwareLicense from './assets/SOFTWARE LICENSE AND PRIVACY AGREEMENT - G
 import privacyPolicy from './assets/PRIVACY POLICY.pdf';
 import termsOfService from './assets/TERMS OF SERVICE AND LEGAL AGREEMENT.pdf';
 import securityPolicy from './assets/SECURITY POLICY.pdf';
-import contactUsImage from './assets/contact-us.jpeg';
+import contactUsImage from './assets/contact-us.jpg';
 import logoImage from './assets/image.png';
 
 function App() {
