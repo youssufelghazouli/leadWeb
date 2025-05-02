@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock } from 'lucide-react';
+import { Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock, Menu, X } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 // Import local assets
@@ -26,6 +26,7 @@ function App() {
     message: ''
   });
   const [isPolicyAgreed, setIsPolicyAgreed] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,7 +35,6 @@ function App() {
       return;
     }
 
-    // Prepare the email data
     const emailData = {
       form_title: formTitle,
       name: formData.name,
@@ -43,12 +43,11 @@ function App() {
       message: formData.message,
     };
 
-    // Send email using EmailJS
     emailjs.send(
-      'service_d76x92s', // Service ID
-      'template_r75oava', // Template ID for "Contact Us"
+      'service_d76x92s',
+      'template_r75oava',
       emailData,
-      'WCwpfDLkO-ZPQ6rd8' // User ID (Public API Key)
+      'WCwpfDLkO-ZPQ6rd8'
     )
     .then((response) => {
       console.log('Email sent successfully:', response.status, response.text);
@@ -56,7 +55,6 @@ function App() {
       setFormData({ name: '', email: '', phone: '', message: '' });
       setIsPolicyAgreed(false);
 
-      // Show download modal only for "Download for Free" or "Start Free Now"
       if (formTitle === 'Download for Free' || formTitle === 'Start Free Now') {
         setShowDownloadModal(true);
       } else {
@@ -70,7 +68,6 @@ function App() {
   };
 
   const handleDownload = (platform: string) => {
-    // Create a link element to trigger the download
     const link = document.createElement('a');
     link.href = softwareLicense;
     link.download = 'SOFTWARE LICENSE AND PRIVACY AGREEMENT - Google Docs.pdf';
@@ -78,7 +75,6 @@ function App() {
     link.click();
     document.body.removeChild(link);
 
-    // Close the download modal after initiating the download
     setShowDownloadModal(false);
     alert(`Thank you for downloading the Software License and Privacy Agreement for ${platform}!`);
   };
@@ -86,6 +82,10 @@ function App() {
   const openForm = (title: string) => {
     setFormTitle(title);
     setShowContactForm(true);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -210,7 +210,15 @@ function App() {
             <img src={logoImage} alt="Smartleads Logo" className="w-7 h-7" />
             <span className="text-lg font-bold text-white drop-shadow-md">Smartleads</span>
           </div>
-          <div className="flex items-center gap-5">
+          {/* Hamburger Menu Button (Visible on Mobile) */}
+          <button 
+            className="md:hidden text-gray-300 hover:text-amber-500 transition-colors"
+            onClick={toggleMenu}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          {/* Navigation Links (Visible on Desktop) */}
+          <div className="hidden md:flex items-center gap-5">
             <a href="#features" className="text-gray-300 hover:text-amber-500 transition-colors">Features</a>
             <a href="#benefits" className="text-gray-300 hover:text-amber-500 transition-colors">Why Smartleads</a>
             <a href="#contact" className="text-gray-300 hover:text-amber-500 transition-colors">Contact Us</a>
@@ -228,6 +236,28 @@ function App() {
             </button>
           </div>
         </div>
+        {/* Dropdown Menu (Visible on Mobile when Menu is Open) */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50">
+            <div className="flex flex-col items-center gap-4 py-4">
+              <a href="#features" className="text-gray-300 hover:text-amber-500 transition-colors" onClick={toggleMenu}>Features</a>
+              <a href="#benefits" className="text-gray-300 hover:text-amber-500 transition-colors" onClick={toggleMenu}>Why Smartleads</a>
+              <a href="#contact" className="text-gray-300 hover:text-amber-500 transition-colors" onClick={toggleMenu}>Contact Us</a>
+              <button 
+                onClick={() => { openForm('Book a Demo'); toggleMenu(); }}
+                className="text-amber-500 font-semibold hover:text-amber-400 transition-colors"
+              >
+                Book a Demo
+              </button>
+              <button 
+                onClick={() => { openForm('Start Free Now'); toggleMenu(); }}
+                className="bg-amber-500 text-black px-3 py-1.5 rounded-md font-semibold hover:bg-amber-400 transition-all duration-300 shadow-lg"
+              >
+                Download for Free
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -241,10 +271,10 @@ function App() {
           }}
         />
         
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-8 animate-fade-in pb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-loose tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600 drop-shadow-lg pb-5">
-              Stop Waiting, Start Finding
-            </h1>
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto pt-20 md:pt-8 mt-8 animate-fade-in pb-12">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-loose tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600 drop-shadow-lg pb-5">
+            Stop Waiting, Start Finding
+          </h1>
           <p className="text-lg md:text-xl mb-6 text-gray-200 font-medium">
             Smartleads: Autopilot Lead Generation
           </p>
@@ -359,7 +389,6 @@ function App() {
             Built for Realtors & Small Businesses
           </h2>
 
-          {/* Online and Social Media Intent Search */}
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
@@ -367,7 +396,7 @@ function App() {
                   h3 {
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 2; /* Number of lines to show */
+                    -webkit-line-clamp: 2;
                     overflow: hidden;
                     text-overflow: ellipsis;
                   }
@@ -403,7 +432,6 @@ function App() {
             </div>
           </div>
 
-          {/* Ad/Post Interactions Search */}
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
@@ -411,7 +439,7 @@ function App() {
                   h3 {
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 2; /* Number of lines to show */
+                    -webkit-line-clamp: 2;
                     overflow: hidden;
                     text-overflow: ellipsis;
                   }
@@ -447,7 +475,6 @@ function App() {
             </div>
           </div>
 
-          {/* B2B Local Business Search */}
           <div className="bg-gradient-to-r from-gray-800/90 to-gray-900/90 rounded-xl p-6 mb-10 backdrop-blur-md border border-gray-700/50">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">
@@ -455,7 +482,7 @@ function App() {
                   h3 {
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 2; /* Number of lines to show */
+                    -webkit-line-clamp: 2;
                     overflow: hidden;
                     text-overflow: ellipsis;
                   }
@@ -526,7 +553,7 @@ function App() {
       {/* Contact Section */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-gray-800" id="contact">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between mb-8">
+          <div className="flex flex-row justify-between items-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-white drop-shadow-md">Get in Touch</h2>
             <button 
               onClick={() => openForm('Book a Demo')}
