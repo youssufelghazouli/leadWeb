@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bot, Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock } from 'lucide-react';
+import { Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 // Import local assets
@@ -12,6 +12,8 @@ import softwareLicense from './assets/SOFTWARE LICENSE AND PRIVACY AGREEMENT - G
 import privacyPolicy from './assets/PRIVACY POLICY.pdf';
 import termsOfService from './assets/TERMS OF SERVICE AND LEGAL AGREEMENT.pdf';
 import securityPolicy from './assets/SECURITY POLICY.pdf';
+import contactUsImage from './assets/contact-us.jpeg';
+import logoImage from './assets/image.png';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -205,7 +207,7 @@ function App() {
       <nav className="fixed w-full z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-700/50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <Bot className="w-7 h-7 text-amber-500" />
+            <img src={logoImage} alt="Smartleads Logo" className="w-7 h-7" />
             <span className="text-lg font-bold text-white drop-shadow-md">Smartleads</span>
           </div>
           <div className="flex items-center gap-5">
@@ -238,7 +240,7 @@ function App() {
           }}
         />
         
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16 animate-fade-in">
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-8 animate-fade-in pb-16">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600 drop-shadow-lg">
             Stop Waiting, Start Finding
           </h1>
@@ -520,6 +522,48 @@ function App() {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <section className="py-16 bg-gradient-to-b from-gray-900 to-gray-800" id="contact">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-white drop-shadow-md">
+            Get in Touch
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="text-left">
+              <p className="text-gray-300 mb-4">
+                <strong>Email:</strong> <a href="mailto:salesfinderai@gmail.com" className="text-amber-500 hover:underline">salesfinderai@gmail.com</a>
+              </p>
+              <p className="text-gray-300 mb-4">
+                <strong>Phone:</strong> <a href="tel:+17785129921" className="text-amber-500 hover:underline">+1 (778) 512-9921</a>
+              </p>
+              <p className="text-gray-300 mb-4">
+                <strong>Location:</strong> Vancouver, British Columbia, Canada
+              </p>
+              <p className="text-gray-300 flex items-center gap-2">
+                <Instagram className="w-5 h-5 text-amber-500" />
+                <span>Follow our <a href="https://www.instagram.com/salesfinderai/" className="text-amber-500 hover:underline" target="_blank">Instagram</a> for updates and more feature information demos!</span>
+              </p>
+            </div>
+            <div className="flex items-center justify-center">
+              <button 
+                onClick={() => openForm('Book a Demo')}
+                className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 shadow-xl hover:scale-105 transition-transform duration-300"
+              >
+                Book a Demo
+                <ArrowRight size={18} />
+              </button>
+            </div>
+            <div>
+              <img 
+                src={contactUsImage}
+                alt="Contact Us"
+                className="rounded-lg shadow-xl w-full h-48 object-cover border border-gray-700/50"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-gray-900 to-black">
         <div className="max-w-4xl mx-auto text-center px-4">
@@ -553,7 +597,7 @@ function App() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-6">
             <div>
-              <Bot className="w-8 h-8 text-amber-500 mb-3" />
+              <img src={logoImage} alt="Smartleads Logo" className="w-8 h-8 mb-3" />
               <h3 className="text-white font-semibold mb-2 text-amber-400">Smartleads</h3>
               <p className="text-sm">
                 The future of sales. High-intent, local leads for realtors and small businesses.
@@ -562,7 +606,7 @@ function App() {
                 <a href="#" className="text-gray-400 hover:text-amber-500">
                   <Youtube size={20} />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-amber-500">
+                <a href="https://www.instagram.com/salesfinderai/" className="text-gray-400 hover:text-amber-500" target="_blank">
                   <Instagram size={20} />
                 </a>
               </div>
@@ -581,10 +625,10 @@ function App() {
             <div>
               <h4 className="text-white font-semibold mb-3">Company</h4>
               <ul className="space-y-1 text-sm">
-                <li>About Smartleads</li>
+                <li><a href="#features" className="hover:text-amber-500">About Smartleads</a></li>
                 <li>Blog</li>
                 <li>Careers</li>
-                <li>Contact</li>
+                <li><a href="#contact" className="hover:text-amber-500">Contact</a></li>
               </ul>
             </div>
             
