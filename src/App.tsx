@@ -241,8 +241,8 @@ function App() {
           }}
         />
         
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-8 animate-fade-in pb-16">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600 drop-shadow-lg">
+        <div className="relative z-20 text-center px-6 max-w-4xl mx-auto mt-8 animate-fade-in pb-16">
+          <h1 className="text-3xl md:text-5xl font-bold mb-8 leading-loose tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600 drop-shadow-lg">
             Stop Waiting, Start Finding
           </h1>
           <p className="text-lg md:text-xl mb-6 text-gray-200 font-medium">
