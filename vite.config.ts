@@ -7,4 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  assetsInclude: ['**/*.zip', '**/*.exe'], // Include .zip and .exe files as assets
 });

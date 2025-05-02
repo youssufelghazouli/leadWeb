@@ -604,9 +604,7 @@ function App() {
             Transform Sales with Smartleads
           </h2>
           <p className="text-lg text-gray-300 mb-6">
-            Join elite realtors and
-
- businesses finding high-intent, untouched leads in their area.
+            Join elite realtors and businesses finding high-intent, untouched leads in their area.
           </p>
           <div className="flex justify-center gap-4">
             <button 
