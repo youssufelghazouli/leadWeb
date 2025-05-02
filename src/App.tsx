@@ -11,7 +11,7 @@ import smartConsent from './assets/smartconsent.jpg';
 import softwareLicense from './assets/SOFTWARE LICENSE AND PRIVACY AGREEMENT - Google Docs.pdf';
 import privacyPolicy from './assets/PRIVACY POLICY.pdf';
 import termsOfService from './assets/TERMS OF SERVICE AND LEGAL AGREEMENT.pdf';
-import cookiePolicy from './assets/SECURITY POLICY.pdf';
+import securityPolicy from './assets/SECURITY POLICY.pdf';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -28,7 +28,7 @@ function App() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!isPolicyAgreed) {
-      alert('You must agree to the Privacy Policy, Terms of Service, Cookie Policy, and Software License Agreement to proceed.');
+      alert('You must agree to the Privacy Policy, Terms of Service, Security Policy, and Software License Agreement to proceed.');
       return;
     }
 
@@ -152,7 +152,7 @@ function App() {
                   I agree to the{' '}
                   <a href={privacyPolicy} className="text-amber-500 hover:underline" target="_blank">Privacy Policy</a>,{' '}
                   <a href={termsOfService} className="text-amber-500 hover:underline" target="_blank">Terms of Service</a>,{' '}
-                  <a href={cookiePolicy} className="text-amber-500 hover:underline" target="_blank">Cookie Policy</a>, and{' '}
+                  <a href={securityPolicy} className="text-amber-500 hover:underline" target="_blank">Security Policy</a>, and{' '}
                   <a href={softwareLicense} className="text-amber-500 hover:underline" target="_blank">Software License Agreement</a>.
                 </label>
               </div>
@@ -593,7 +593,7 @@ function App() {
               <ul className="space-y-1 text-sm">
                 <li><a href={privacyPolicy} target="_blank" className="hover:text-amber-500">Privacy Policy</a></li>
                 <li><a href={termsOfService} target="_blank" className="hover:text-amber-500">Terms of Service</a></li>
-                <li><a href={cookiePolicy} target="_blank" className="hover:text-amber-500">Cookie Policy</a></li>
+                <li><a href={securityPolicy} target="_blank" className="hover:text-amber-500">Security Policy</a></li>
                 <li><a href={softwareLicense} target="_blank" className="hover:text-amber-500">Software License Agreement</a></li>
               </ul>
             </div>
