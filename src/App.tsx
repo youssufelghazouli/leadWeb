@@ -14,6 +14,8 @@ import termsOfService from './assets/TERMS OF SERVICE AND LEGAL AGREEMENT.pdf';
 import securityPolicy from './assets/SECURITY POLICY.pdf';
 import contactUsImage from './assets/contact-us.jpg';
 import logoImage from './assets/image.png';
+import smartleadsExe from './assets/smartleads.exe';
+import smartleadsAppZip from './assets/smartleads.app-20250502T194833Z-1-001.zip';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -69,14 +71,19 @@ function App() {
 
   const handleDownload = (platform: string) => {
     const link = document.createElement('a');
-    link.href = softwareLicense;
-    link.download = 'SOFTWARE LICENSE AND PRIVACY AGREEMENT - Google Docs.pdf';
+    if (platform === 'Windows') {
+      link.href = smartleadsExe;
+      link.download = 'smartleads.exe';
+    } else if (platform === 'macOS') {
+      link.href = smartleadsAppZip;
+      link.download = 'smartleads.app-20250502T194833Z-1-001.zip';
+    }
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
     setShowDownloadModal(false);
-    alert(`Thank you for downloading the Software License and Privacy Agreement for ${platform}!`);
+    alert(`Thank you for downloading Smartleads for ${platform}!`);
   };
 
   const openForm = (title: string) => {
@@ -179,9 +186,9 @@ function App() {
             >
               ✕
             </button>
-            <h3 className="text-xl font-bold mb-4 text-amber-400">Download Software License</h3>
+            <h3 className="text-xl font-bold mb-4 text-amber-400">Download Smartleads</h3>
             <p className="text-gray-300 mb-6">
-              Thank you for your submission! Please select your platform to download the Software License and Privacy Agreement.
+              Thank you for your submission! Please select your platform to download the Smartleads application.
             </p>
             <div className="flex justify-center gap-4">
               <button
@@ -597,7 +604,9 @@ function App() {
             Transform Sales with Smartleads
           </h2>
           <p className="text-lg text-gray-300 mb-6">
-            Join elite realtors and businesses finding high-intent, untouched leads in their area.
+            Join elite realtors and
+
+ businesses finding high-intent, untouched leads in their area.
           </p>
           <div className="flex justify-center gap-4">
             <button 
