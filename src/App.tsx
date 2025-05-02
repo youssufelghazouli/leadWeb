@@ -213,6 +213,7 @@ function App() {
           <div className="flex items-center gap-5">
             <a href="#features" className="text-gray-300 hover:text-amber-500 transition-colors">Features</a>
             <a href="#benefits" className="text-gray-300 hover:text-amber-500 transition-colors">Why Smartleads</a>
+            <a href="#contact" className="text-gray-300 hover:text-amber-500 transition-colors">Contact Us</a>
             <button 
               onClick={() => openForm('Book a Demo')} 
               className="text-amber-500 font-semibold hover:text-amber-400 transition-colors"
@@ -264,7 +265,7 @@ function App() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="text-green-500 w-5 h-5" />
-                    <span>Access to All Platforms & Features</span>
+                    <span>Access to All Platforms & Search Features</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="text-green-500 w-5 h-5" />
@@ -524,12 +525,26 @@ function App() {
 
       {/* Contact Section */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-gray-800" id="contact">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-white drop-shadow-md">
-            Get in Touch
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-left">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-white drop-shadow-md">Get in Touch</h2>
+            <button 
+              onClick={() => openForm('Book a Demo')}
+              className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 shadow-xl hover:scale-105 transition-transform duration-300"
+            >
+              Book a Demo
+              <ArrowRight size={18} />
+            </button>
+          </div>
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/2">
+              <img 
+                src={contactUsImage}
+                alt="Contact Us"
+                className="rounded-lg shadow-xl w-full h-64 object-cover border border-gray-700/50"
+              />
+            </div>
+            <div className="md:w-1/2 text-left">
               <p className="text-gray-300 mb-4">
                 <strong>Email:</strong> <a href="mailto:salesfinderai@gmail.com" className="text-amber-500 hover:underline">salesfinderai@gmail.com</a>
               </p>
@@ -540,25 +555,9 @@ function App() {
                 <strong>Location:</strong> Vancouver, British Columbia, Canada
               </p>
               <p className="text-gray-300 flex items-center gap-2">
-                <Instagram className="w-5 h-5 text-amber-500" />
-                <span>Follow our <a href="https://www.instagram.com/salesfinderai/" className="text-amber-500 hover:underline" target="_blank">Instagram</a> for updates and more feature information demos!</span>
+                <Instagram className="w-6 h-6 text-amber-500" />
+                <span>Follow our <a href="https://www.instagram.com/salesfinderai/" className="text-amber-500 hover:underline" target="_blank">Instagram</a> for more updates, feature information, and demos!</span>
               </p>
-            </div>
-            <div className="flex items-center justify-center">
-              <button 
-                onClick={() => openForm('Book a Demo')}
-                className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 shadow-xl hover:scale-105 transition-transform duration-300"
-              >
-                Book a Demo
-                <ArrowRight size={18} />
-              </button>
-            </div>
-            <div>
-              <img 
-                src={contactUsImage}
-                alt="Contact Us"
-                className="rounded-lg shadow-xl w-full h-48 object-cover border border-gray-700/50"
-              />
             </div>
           </div>
         </div>
