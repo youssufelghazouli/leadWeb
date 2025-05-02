@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { Bot, Search, Users, Sparkles, ArrowRight, BrainCircuit, MapPin, Zap, Target, Globe, Rocket, Shield, Brain, CheckCircle2, Download, ArrowDown, Phone, Youtube, Instagram, MessageSquare, Clock } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
-// Import local images
+// Import local assets
 import autopilotLeads from './assets/autopilot-leads.jpg';
 import socialMediaIntent from './assets/social-media-intent.jpeg';
 import instagramPostInteraction from './assets/instagram-post-interaction.jpg';
 import aiAssistant from './assets/ai-assistant.jpg';
 import smartConsent from './assets/smartconsent.jpg';
 import softwareLicense from './assets/SOFTWARE LICENSE AND PRIVACY AGREEMENT - Google Docs.pdf';
+import privacyPolicy from './assets/PRIVACY POLICY.pdf';
+import termsOfService from './assets/TERMS OF SERVICE AND LEGAL AGREEMENT.pdf';
+import cookiePolicy from './assets/SECURITY POLICY.pdf';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -25,7 +28,7 @@ function App() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!isPolicyAgreed) {
-      alert('You must agree to the Privacy Policy, Terms of Service, and Cookie Policy to proceed.');
+      alert('You must agree to the Privacy Policy, Terms of Service, Cookie Policy, and Software License Agreement to proceed.');
       return;
     }
 
@@ -51,14 +54,14 @@ function App() {
       setFormData({ name: '', email: '', phone: '', message: '' });
       setIsPolicyAgreed(false);
 
-      // Show download modal only for "Get Started Free" or "Start Free Now"
-      if (formTitle === 'Get Started Free' || formTitle === 'Start Free Now') {
+      // Show download modal only for "Download for Free" or "Start Free Now"
+      if (formTitle === 'Download for Free' || formTitle === 'Start Free Now') {
         setShowDownloadModal(true);
       } else {
         alert('Thank you! Our team will contact you shortly.');
       }
     })
-    .catch((error) => {
+    .catch((error: any) => {
       console.error('Failed to send email:', error);
       alert('There was an error sending your request. Please try again later.');
     });
@@ -147,9 +150,10 @@ function App() {
                 />
                 <label htmlFor="policy-agreement" className="text-sm text-gray-300">
                   I agree to the{' '}
-                  <a href="/privacy-policy" className="text-amber-500 hover:underline">Privacy Policy</a>,{' '}
-                  <a href="/terms-of-service" className="text-amber-500 hover:underline">Terms of Service</a>, and{' '}
-                  <a href="/cookie-policy" className="text-amber-500 hover:underline">Cookie Policy</a>.
+                  <a href={privacyPolicy} className="text-amber-500 hover:underline" target="_blank">Privacy Policy</a>,{' '}
+                  <a href={termsOfService} className="text-amber-500 hover:underline" target="_blank">Terms of Service</a>,{' '}
+                  <a href={cookiePolicy} className="text-amber-500 hover:underline" target="_blank">Cookie Policy</a>, and{' '}
+                  <a href={softwareLicense} className="text-amber-500 hover:underline" target="_blank">Software License Agreement</a>.
                 </label>
               </div>
               <button
@@ -217,7 +221,7 @@ function App() {
               onClick={() => openForm('Start Free Now')}
               className="bg-amber-500 text-black px-3 py-1.5 rounded-md font-semibold hover:bg-amber-400 transition-all duration-300 shadow-lg"
             >
-              Start Free Now
+              Download for Free
             </button>
           </div>
         </div>
@@ -268,11 +272,11 @@ function App() {
               </div>
               <div className="flex-1">
                 <button 
-                  onClick={() => openForm('Get Started Free')}
+                  onClick={() => openForm('Download for Free')}
                   className="bg-amber-500 hover:bg-amber-600 text-black font-bold px-6 py-3 rounded-lg flex items-center gap-2 mx-auto shadow-xl hover:scale-105 transition-transform duration-300"
                 >
                   <Download className="w-5 h-5" />
-                  Get Started Free
+                  Download for Free
                 </button>
                 <p className="text-sm mt-2 text-gray-300 flex items-center justify-center gap-1">
                   <Clock className="w-4 h-4 text-amber-400" />
@@ -538,7 +542,7 @@ function App() {
               className="border-2 border-amber-500 text-amber-500 hover:bg-amber-500/20 font-semibold px-6 py-3 rounded-md flex items-center gap-2 hover:scale-105 transition-transform duration-300"
             >
               <Download size={18} />
-              Start Free Now
+              Download for Free
             </button>
           </div>
         </div>
@@ -587,9 +591,10 @@ function App() {
             <div>
               <h4 className="text-white font-semibold mb-3">Legal</h4>
               <ul className="space-y-1 text-sm">
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Cookie Policy</li>
+                <li><a href={privacyPolicy} target="_blank" className="hover:text-amber-500">Privacy Policy</a></li>
+                <li><a href={termsOfService} target="_blank" className="hover:text-amber-500">Terms of Service</a></li>
+                <li><a href={cookiePolicy} target="_blank" className="hover:text-amber-500">Cookie Policy</a></li>
+                <li><a href={softwareLicense} target="_blank" className="hover:text-amber-500">Software License Agreement</a></li>
               </ul>
             </div>
           </div>
