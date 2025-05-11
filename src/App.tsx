@@ -15,7 +15,7 @@ import securityPolicy from './assets/SECURITY POLICY.pdf';
 import contactUsImage from './assets/contact-us.jpg';
 import logoImage from './assets/image.png';
 import smartleadsExe from './assets/smartleads.exe';
-import smartleadsAppZip from './assets/smartleads.app-20250502T194833Z-1-001.zip';
+import smartleadsAppZip from './assets/smartleads.app.zip';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -76,14 +76,18 @@ function App() {
       link.download = 'smartleads.exe';
     } else if (platform === 'macOS') {
       link.href = smartleadsAppZip;
-      link.download = 'smartleads.app-20250502T194833Z-1-001.zip';
+      link.download = 'smartleads.app.zip';
     }
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
     setShowDownloadModal(false);
-    alert(`Thank you for downloading Smartleads for ${platform}! As a newly launched application, it may require you to select 'Run anyway', 'Keep' or 'Download suspicious file' if blocked or prompted by your system. For added confidence, you can scan the file with your antivirus software for ease of mind. Contact us at salesfinderai@gmail.com if you need assistance.`);
+    if (platform === 'Windows') {
+      alert(`Thank you for downloading Smartleads for ${platform}! As a newly launched application, it may require you to select 'Run anyway', 'Keep' or 'Download suspicious file' if blocked or prompted by your system. For added confidence, you can scan the file with your antivirus software for ease of mind. Contact us at salesfinderai@gmail.com if you need assistance.`);
+    } else if (platform === 'macOS') {
+      alert(`Thank you for downloading Smartleads for ${platform}! As a newly launched application, attempt to open the app. If you see a message saying the developer is not known or trusted, go to System Settings > Privacy & Security, scroll to the bottom, and click 'Allow' or 'Open Anyway' for the Smartleads app. For added confidence, you can scan the file with your antivirus software for ease of mind. Contact us at salesfinderai@gmail.com if you need assistance.`);
+    }
   };
 
   const openForm = (title: string) => {
