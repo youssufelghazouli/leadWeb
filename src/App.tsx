@@ -84,7 +84,7 @@ function App() {
 
     setShowDownloadModal(false);
     if (platform === 'Windows') {
-      alert(`Thank you for downloading Smartleads for ${platform}! As a newly launched application, it may require you to select 'Run anyway', 'Keep' or 'Download suspicious file' if blocked or prompted by your system. For added confidence, you can scan the file with your antivirus software for ease of mind. Contact us at salesfinderai@gmail.com if you need assistance.`);
+      alert(`Thank you for downloading Smartleads for ${platform}! As a newly launched application, it may require you to select 'More info' then 'Run anyway', 'Keep' or 'Download suspicious file' if blocked or prompted by your system. For added confidence, you can scan the file with your antivirus software for ease of mind. Contact us at salesfinderai@gmail.com if you need assistance.`);
     } else if (platform === 'macOS') {
       alert(`Thank you for downloading Smartleads for ${platform}! As a newly launched application, attempt to open the app. If you see a message saying the developer is not known or trusted, go to System Settings > Privacy & Security, scroll to the bottom, and click 'Allow' or 'Open Anyway' for the Smartleads app. For added confidence, you can scan the file with your antivirus software for ease of mind. Contact us at salesfinderai@gmail.com if you need assistance.`);
     }
