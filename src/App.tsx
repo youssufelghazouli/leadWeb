@@ -15,7 +15,7 @@ import securityPolicy from './assets/SECURITY POLICY.pdf';
 import contactUsImage from './assets/contact-us.jpg';
 import logoImage from './assets/image.png';
 import smartleadsExe from './assets/smartleads.exe';
-import smartleadsAppZip from './assets/smartleads.app.zip';
+import smartleadsAppZip from './assets/smartleads.zip';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -76,7 +76,7 @@ function App() {
       link.download = 'smartleads.exe';
     } else if (platform === 'macOS') {
       link.href = smartleadsAppZip;
-      link.download = 'smartleads.app.zip';
+      link.download = 'smartleads.zip';
     }
     document.body.appendChild(link);
     link.click();
